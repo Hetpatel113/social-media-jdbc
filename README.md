@@ -19,4 +19,5 @@ This is a console-based social media application built using Java, JDBC, and MyS
 - Open phpMyAdmin → select `social_media` database → go to Import → upload `sql/schema.sql`
 
 ## How to Run
-Open IntelliJ IDEA → open project → run:
+Open IntelliJ IDEA → open project → run:Main.java
+
