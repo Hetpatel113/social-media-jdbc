@@ -30,3 +30,19 @@ bin/
 # IntelliJ / IDEA
 .idea/
 *.iml
+# IntelliJ
+.idea/
+*.iml
+
+# Java build
+target/
+*.class
+*.jar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config / secrets
+.env
+config/*.properties
