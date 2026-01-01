@@ -36,15 +36,6 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `comments`
---
-
-INSERT INTO `comments` (`id`, `user_id`, `post_id`, `comment_text`, `commented_at`) VALUES
-(2, 7, 1, 'aahaaa', '2025-08-16 13:25:40'),
-(3, 7, 1, 'www', '2025-08-16 13:28:35'),
-(4, 9, 1, 'asss', '2025-08-20 13:44:57');
-
---
 -- Triggers `comments`
 --
 DELIMITER $$
@@ -78,15 +69,6 @@ CREATE TABLE `follows` (
   `followee_id` int(11) NOT NULL,
   `followed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `follows`
---
-
-INSERT INTO `follows` (`follower_id`, `followee_id`, `followed_at`) VALUES
-(8, 9, '2025-08-20 13:42:18'),
-(9, 7, '2025-08-20 13:25:05');
-
 --
 -- Triggers `follows`
 --
@@ -116,15 +98,6 @@ CREATE TABLE `likes` (
   `post_id` int(11) NOT NULL,
   `liked_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `likes`
---
-
-INSERT INTO `likes` (`id`, `user_id`, `post_id`, `liked_at`) VALUES
-(4, 7, 1, '2025-08-16 13:25:30'),
-(6, 9, 1, '2025-08-20 13:44:43');
-
 --
 -- Triggers `likes`
 --
@@ -161,15 +134,6 @@ CREATE TABLE `notifications` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `notifications`
---
-
-INSERT INTO `notifications` (`id`, `user_id`, `message`, `created_at`) VALUES
-(1, 9, '👥 b started following you.', '2025-08-20 13:42:18'),
-(2, 7, '❤️ zz liked your post.', '2025-08-20 13:44:43'),
-(3, 7, '💬 zz commented: \"asss\"', '2025-08-20 13:44:57');
-
 -- --------------------------------------------------------
 
 --
@@ -184,16 +148,6 @@ CREATE TABLE `posts` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `content`, `image_data`, `author`, `created_at`) VALUES
-(1, 'bbbb', NULL, '7', '2025-08-16 12:58:59'),
-(4, 'aeeeeee', '', '7', '2025-08-16 13:20:35'),
-(5, 'aa bb cc', '', '7', '2025-08-16 13:30:07'),
-(6, 'helloe guys', '', '7', '2025-08-16 13:38:08'),
-(7, 'hellow dear guys', '', '7', '2025-08-16 13:38:28');
 
 -- --------------------------------------------------------
 
@@ -207,14 +161,6 @@ CREATE TABLE `shares` (
   `post_id` int(11) NOT NULL,
   `shared_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `shares`
---
-
-INSERT INTO `shares` (`id`, `user_id`, `post_id`, `shared_at`) VALUES
-(2, 7, 1, '2025-08-16 13:25:47'),
-(3, 7, 1, '2025-08-16 13:28:46');
 
 -- --------------------------------------------------------
 
@@ -231,18 +177,6 @@ CREATE TABLE `users` (
   `is_private` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `bio`, `is_private`) VALUES
-(7, 'a', 'a', 'aaa', 'bio', 1),
-(8, 'b', 'b', 'bb', '', 0),
-(9, 'zz', 'zz', 'zz', '', 0);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `comments`
